@@ -70,22 +70,7 @@ export default function PortraitGenerator({
   const [portraitPadding, setPortraitPadding] = useState(true)
   const [names, setNames] = useState(false)
   const [search, setSearch] = useState("")
-/*
-  // Loading of custom icons
-  useEffect(() => {
-    try {
-      const parsed = JSON.parse(localStorage.getItem(localStorageKey))
-      if (parsed)
-        setCustom(parsed)
-    } catch (error) {}
-  }, [])
 
-  // Saving of custom icons
-  useEffect(() => {
-    if (custom)
-      localStorage.setItem(localStorageKey, JSON.stringify(custom))
-  }, [custom])
-*/
   const iconsMisc = [
     {
       name: "Flex slot",
