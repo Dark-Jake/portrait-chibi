@@ -1,0 +1,84 @@
+:root {
+  --ifm-color-primary: #ff4040;
+  --ifm-color-primary-dark: #bb1313;
+  --ifm-color-primary-darker: #b11212;
+  --ifm-color-primary-darkest: #920f0f;
+  --ifm-color-primary-light: #df1616;
+  --ifm-color-primary-lighter: #e81d1d;
+  --ifm-color-primary-lightest: #ea2b2b;
+  --ifm-background-color: #fffcff !important;
+
+  --ifm-code-font-size: 95%;
+  --ifm-list-margin: 0.75rem;
+  --ifm-paragraph-margin-bottom: calc(var(--ifm-leading) * 0.5);
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #ff4040;
+  --ifm-color-primary-dark: #bb1313;
+  --ifm-color-primary-darker: #bb1313;
+  --ifm-color-primary-darkest: #eb4444;
+  --ifm-color-primary-light: #920f0f;
+  --ifm-color-primary-lighter: #e81d1d;
+  --ifm-color-primary-lightest: #ea2b2b;
+  --ifm-background-color: #1e1c1e !important;
+  --ifm-navbar-background-color: #121212 !important;
+  --ifm-card-background-color: #121212;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+.footer--dark {
+  --ifm-footer-background-color: #3131314a !important;
+}
+
+/* Search styling */
+[data-theme='light'] .DocSearch {
+  --docsearch-highlight-color: var(--ifm-color-primary-darkest);
+  --docsearch-container-background: rgba(94, 100, 112, 0.7);
+  /* Footer */
+  --docsearch-footer-background: var(--ifm-background-surface-color);
+  --docsearch-footer-shadow: rgba(75, 61, 84, 0.5) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.2) 0px -4px 8px 0px;
+  --docsearch-key-gradient: linear-gradient(
+    -26.5deg,
+    var(--ifm-color-emphasis-200) 0%,
+    var(--ifm-color-emphasis-100) 100%
+  );
+  --docsearch-key-shadow: rgb(29, 41, 41) 0px -2px 0px 0px inset, rgb(44, 35, 47) 0px 0px 1px 1px inset, rgba(7, 3, 9, 0.3) 0px 2px 2px 0px;
+}
+
+.react-md p {
+  margin: 0px;
+}
+
+/* Artifact/Weapon icon display */
+.icon-display-box {
+  float: right;
+  width: 8rem;
+  height: 8rem;
+  margin-left: .5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .icon-display-box {
+    display: none;
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+@font-face{
+  font-family: "Rinse";
+  src: url("https://db.onlinewebfonts.com/t/9ed0ddbb96c55d30cce04f3a5343594a.eot");
+  src: url("https://db.onlinewebfonts.com/t/9ed0ddbb96c55d30cce04f3a5343594a.eot?#iefix")format("embedded-opentype"),
+       url("https://db.onlinewebfonts.com/t/9ed0ddbb96c55d30cce04f3a5343594a.woff")format("woff"),
+       url("https://db.onlinewebfonts.com/t/9ed0ddbb96c55d30cce04f3a5343594a.woff2")format("woff2"),
+       url("https://db.onlinewebfonts.com/t/9ed0ddbb96c55d30cce04f3a5343594a.ttf")format("truetype"),
+       url("https://db.onlinewebfonts.com/t/9ed0ddbb96c55d30cce04f3a5343594a.svg#Rinse")format("svg");
+  font-weight:normal;
+  font-style:normal;
+  font-display:swap;
+}
