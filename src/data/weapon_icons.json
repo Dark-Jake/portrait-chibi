@@ -38,7 +38,8 @@
     "The First Great Magic",
     "Thundering Pulse",
     "Cloudforged",
-    "Silvershower Heartstrings"
+    "Silvershower Heartstrings",
+    "Chain Breaker"
   ],
   "Catalyst": [
     "Apprentice's Notes",
@@ -77,7 +78,10 @@
     "Memory of Dust",
     "Skyward Atlas",
     "Tome of the Eternal Flow",
-    "Tulaytullah's Remembrance"
+    "Tulaytullah's Remembrance",
+    "Ring of Yaxche",
+    "Surf's Up",
+    "Ash-Graven Drinking Horn"
   ],
   "Claymore": [
     "Waster Greatsword",
@@ -114,7 +118,9 @@
     "Song of Broken Pines",
     "The Unforged",
     "Verdict",
-    "Wolf's Gravestone"
+    "Wolf's Gravestone",
+    "Earth Shaker",
+    "Fang of the Mountain King"
   ],
   "Polearm": [
     "Beginner's Protector",
@@ -148,7 +154,8 @@
     "Vortex Vanquisher",
     "Dialogues of the Desert Sages",
     "Crimson Moon's Semblance",
-    "Lumidouce Elegy"
+    "Lumidouce Elegy",
+    "Footprint of the Rainbow"
   ],
   "Sword": [
     "Dull Blade",
@@ -193,6 +200,7 @@
     "Splendor of Tranquil Waters",
     "Summit Shaper",
     "Uraku Misugiri",
-    "Absolution"
+    "Absolution",
+    "Flute of Ezpitzal"
   ]
 }
