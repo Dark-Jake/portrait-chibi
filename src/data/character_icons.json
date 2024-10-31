@@ -11,7 +11,8 @@
       "Wanderer",
       "Faruzan",
       "Lynette",
-      "Xianyun"
+      "Xianyun",
+      "Chasca"
   ],
   "Electro": [
       "1EMC",
@@ -27,7 +28,8 @@
       "Dori",
       "Cyno",
       "Clorinde",
-      "Sethos"
+      "Sethos",
+      "Ororon"
   ],
   "Hydro": [
       "1HMC",
@@ -60,9 +62,11 @@
       "Mika",
       "Freminet",
       "Wriothesley",
-      "Charlotte"
+      "Charlotte",
+      "Citlali"
   ],
   "Pyro": [
+      "1PMC",
       "Diluc",
       "Amber",
       "Xiangling",
@@ -77,7 +81,8 @@
       "Lyney",
       "Chevreuse",
       "Gaming",
-      "Arlecchino"
+      "Arlecchino",
+      "Mavuika"
   ],
   "Geo": [
       "1GMC",
@@ -90,7 +95,8 @@
       "Yun Jin",
       "Navia",
       "Chiori",
-      "Kachina"
+      "Kachina",
+      "Xilonen"
   ],
   "Dendro": [
       "1DMC",
