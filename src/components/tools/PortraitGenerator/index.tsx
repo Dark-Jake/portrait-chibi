@@ -9,6 +9,7 @@ import Tabs from '@theme/Tabs'
 import { CheckboxInput } from '../../common/input/CheckboxInput'
 import filename from '@site/src/utils/filename'
 
+import '../../../css/custom.css'
 export interface PortraitIcon {
   name: string
   path: string
@@ -61,8 +62,8 @@ export default function PortraitGenerator({
   weaponIcons: Record<string, string[]>
 }) {
   const [active, setActive] = useState([{
-    name: "Keqing",
-    path: `/portrait-chibi/img/characters/icon/Keqing.png`,
+    name: "Jake",
+    path: `/portrait-chibi/img/characters/icon/Jake.png`,
     note: "C2+"
   }] as PortraitIcon[])
   const [custom, setCustom] = useState([] as PortraitIcon[])

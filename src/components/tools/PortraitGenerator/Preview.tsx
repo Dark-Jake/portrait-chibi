@@ -1,3 +1,13 @@
+async function loadCustomFont() {
+  const font = new FontFace(
+    "Rinse",
+    "url(https://db.onlinewebfonts.com/t/9ed0ddbb96c55d30cce04f3a5343594a.woff2)"
+  );
+
+  await font.load(); // Espera a que la fuente se cargue
+  document.fonts.add(font); // Agrega la fuente al documento
+}
+
 import React, { useEffect, useRef, useState } from 'react'
 
 import { PortraitIcon } from '.'
@@ -30,41 +40,49 @@ export default function Preview({ active, remove, background, portraitPadding, n
   }
   const list = active.map(x => getName(x)).join(" - ")
 
-  useEffect(() => void (async () => {
-    const canvas = canvasRef.current
-    const ctx = canvas.getContext('2d')
-    canvas.width = totalWidth
-    canvas.height = totalHeight
-
-    ctx.imageSmoothingEnabled = true
-    ctx.imageSmoothingQuality = "high"
-
-    if (background) {
-      ctx.fillStyle = "#121212"
-      ctx.strokeStyle = "#000000"
-    } else {
-      ctx.fillStyle = "transparent"
-      ctx.strokeStyle = "transparent"
+  useEffect(() => {
+    async function initializeCanvas() {
+      await loadCustomFont(); // Espera a que la fuente "Rinse" se cargue
+  
+      const canvas = canvasRef.current;
+      const ctx = canvas.getContext("2d");
+  
+      // Configura el canvas y renderiza el contenido
+      canvas.width = totalWidth;
+      canvas.height = totalHeight;
+  
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+  
+      if (background) {
+        ctx.fillStyle = "#121212";
+        ctx.strokeStyle = "#000000";
+      } else {
+        ctx.fillStyle = "transparent";
+        ctx.strokeStyle = "transparent";
+      }
+      roundRect(ctx, 0, 0, totalWidth, totalHeight, 19);
+  
+      for (let i = 0; i < active.length; i++) {
+        const leftBorder = effectiveFramePad + i * (frameSize + spacing);
+        ctx.fillStyle = "#1e1c1e";
+        ctx.strokeStyle = "#000000";
+        if (background)
+          roundRect(ctx, leftBorder, effectiveFramePad, frameSize, portraitSize + 2 * effectivePortraitPad, 10);
+  
+        const icon = active[i];
+  
+        const x = leftBorder + effectivePortraitPad;
+        const y = effectiveFramePad + effectivePortraitPad;
+        await drawIcon(ctx, icon, x, y, portraitSize, names);
+      }
+  
+      const hasNote = active.some(icon => icon.note && icon.note.length > 0);
+      addFooterToCanvas(canvasRef.current, list, hasNote);
     }
-    roundRect(ctx, 0, 0, totalWidth, totalHeight, 19)
-
-    for (let i = 0; i < active.length; i++) {
-      const leftBorder = effectiveFramePad + i * (frameSize + spacing)
-      ctx.fillStyle = "#1e1c1e"
-      ctx.strokeStyle = "#000000"
-      if (background)
-        roundRect(ctx, leftBorder, effectiveFramePad, frameSize, portraitSize + 2 * effectivePortraitPad, 10)
-
-      const icon = active[i]
-
-      const x = leftBorder + effectivePortraitPad
-      const y = effectiveFramePad + effectivePortraitPad
-      await drawIcon(ctx, icon, x, y, portraitSize, names)
-    }
-    const hasNote = active.some(icon => icon.note && icon.note.length > 0);
-    addFooterToCanvas(canvasRef.current, list, hasNote);
-
-  })(), [active, background, effectivePortraitPad, names])
+  
+    initializeCanvas();
+  }, [active, background, effectivePortraitPad, names]);
 
   return <div>
     <canvas
